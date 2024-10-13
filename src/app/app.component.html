@@ -1,0 +1,12 @@
+<main class="main">
+  <div class="content" id = "content">
+    <ul>
+      <mat-grid-list cols={{elementsPerRow}} rowHeight="220">
+      @for (App of Applist; track App.name; let idx = $index) {
+        <mat-grid-tile style="overflow: visible;"><AppUrl class = "botones" id = {{idx}} [appurl]="App" (mouseenter)="setHover(idx)"></AppUrl></mat-grid-tile>
+      }
+      </mat-grid-list>
+  </ul>
+  </div>
+</main>
+<router-outlet />
