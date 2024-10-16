@@ -35,11 +35,8 @@ jobs:
       - name: Build
         run: npm run build
       # {7}
-      - name: Archive production artifacts
-        run: zip -r build.zip ./dist
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifact
-          path: build.zip
+          name: build
+          path: ./dist
