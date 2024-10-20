@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [$nodeV]
+        node-version: [${{ env.nodeV }}]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       # {2}
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js $
         uses: actions/setup-node@v4
         with:
-          node-version: $nodeV
+          node-version: ${{ env.nodeV }}
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
