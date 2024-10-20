@@ -2,9 +2,8 @@ name: Deploy
 env: 
   nodeV: 22
 on:
-  push:
-    branches:
-    - main
+  label:
+    types: [created]
 
 jobs:
   deploy:
