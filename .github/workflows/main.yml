@@ -1,5 +1,6 @@
 name: Deploy
-
+env: 
+  nodeV: 22
 on:
   push:
     branches:
@@ -10,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [22]
+        node-version: [$nodeV]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       # {2}
@@ -21,7 +22,7 @@ jobs:
       - name: Setup Node.js $
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: $nodeV
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
