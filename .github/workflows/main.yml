@@ -9,9 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [${{ env.nodeV }}]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       # {2}
